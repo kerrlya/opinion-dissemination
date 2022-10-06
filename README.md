@@ -1,5 +1,5 @@
 # opinion-dissem
-Component of the Nonlinear and Complex System Research Group's 'Information Cascades' project focusing assigns opinion values to tweets. All sensitive information has been removed from the new public version of this repository.
+Description: Component of the Nonlinear and Complex System Research Group's 'Information Cascades' project focusing on assigning opinion values to tweets and users. All sensitive information has been removed from the new public version of this repository.
 
 This repository includes the code for converting Twitter followership networks into csv's and visual graphs.
 

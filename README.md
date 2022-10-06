@@ -26,10 +26,9 @@ Top words in Pro-Life bios:
 ## More Information
 Detailed documentation can be found with the following links.
 
-Poster Link: (Brief Overview)
-https://drive.google.com/file/d/1Mi2hnEhycsTwkPQ48KotmL8sXR4MsQhk/view?usp=sharing
+[Poster Link](https://drive.google.com/file/d/1Mi2hnEhycsTwkPQ48KotmL8sXR4MsQhk/view?usp=sharing) (Brief Overview)
 
-Journal Link: (Too much information) https://drive.google.com/file/d/118xRUz1HUETt3eHmt-tr7rNlCHFY5uvD/view?usp=sharing
+[Journal Link](https://drive.google.com/file/d/118xRUz1HUETt3eHmt-tr7rNlCHFY5uvD/view?usp=sharing) (Too much information) 
 
 
 ## Repository Guide

@@ -1,6 +1,8 @@
 # opinion-dissem
 Description: Component of the Nonlinear and Complex System Research Group's 'Information Cascades' project focusing on assigning opinion values to tweets and users. All sensitive information has been removed from the new public version of this repository.
 
+## Summary
+
 This repository includes the code for converting Twitter followership networks into csv's and visual graphs.
 
 <img width="500" alt="Screen Shot 2022-09-14 at 7 08 55 PM" src="https://user-images.githubusercontent.com/58631280/194263739-f29d1bbf-37c3-496e-a684-c07f009d4c87.png">
@@ -21,6 +23,15 @@ Top words in Pro-Life bios:
 Top words in Pro-Life bios:
 <img width="1273" alt="20_top_nonstopwords_CHOICE" src="https://user-images.githubusercontent.com/58631280/194265748-40838a23-c2f0-402f-86b4-0ea8410f027f.png">
 
+## More Information
+Detailed documentation can be found with the following links.
+
+Poster Link: (Brief Overview)
+https://drive.google.com/file/d/1Mi2hnEhycsTwkPQ48KotmL8sXR4MsQhk/view?usp=sharing
+
+Journal Link: (Too much information) https://drive.google.com/file/d/118xRUz1HUETt3eHmt-tr7rNlCHFY5uvD/view?usp=sharing
 
 
-I also built some custom tools that use NLTK and textblob to perform language analysis and visualization. Currently, we have analyses on the Pro-Choice and Pro-Life tweets/user bios from Twitter's reaction to the 2022 Overturn of Roe v. Wade. (Though these can be applied to any dataset.)
+## Repository Guide
+
+(TBD)

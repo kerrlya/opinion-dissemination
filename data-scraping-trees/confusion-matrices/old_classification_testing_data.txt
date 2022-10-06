@@ -1,0 +1,146 @@
+Description: Here's some of the old testing data and confusion matrices I got from testing on both the 10,000 and 20,000 point dataset
+-------------------------------------------------
+    OLD TESTING DATA FOR 10,000 POINT DATASET
+-------------------------------------------------
+
+Based on "total" (stopwords included) with tfidf model 
+(let March_for_lives (or 1) be "positive")
+Confusion matrix:
+[[1050  258]
+ [ 296  912]]
+
+1050 true negatives
+258 false positives (model says its positive when it's again)
+296 False negatives
+912 True positives
+
+Based on "tokenized join" stopwords not included with tfidf model
+Accuracy of Logistic Regression classifer on train set: 0.991
+Accuracy of Logistic Regression classifer on test set:  0.767
+
+Accuracy: 76.75%
+[[1048  260]
+ [ 325  883]]
+
+
+Based on "tokenized join" with only unigrams
+Accuracy of Logistic Regression classifer on train set: 0.991
+Accuracy of Logistic Regression classifer on test set:  0.718
+
+Accuracy: 71.78%
+[[940 368]
+[342 866]]
+
+Based on "total" (stopwords included) with tfidf model with 2/3rds train-test split
+Accuracy of Logistic Regression classifer on train set: 0.994
+Accuracy of Logistic Regression classifer on test set:  0.773
+
+Accuracy: 77.27%
+[[1370  347]
+ [ 408 1197]]
+
+
+When data is perfectly balanced by deleting 280 pro-choice value points. 0.33 testing data
+Accuracy of Logistic Regression classifer on train set: 0.994
+Accuracy of Logistic Regression classifer on test set:  0.771
+
+Accuracy: 77.1%
+[[1265  376]
+ [ 362 1220]]
+
+When data is perfectly balanced by deleting 280 pro-choice value points. 0.33 testing data
+Accuracy of Logistic Regression classifer on train set: 0.992
+Accuracy of Logistic Regression classifer on test set:  0.779
+
+Accuracy: 77.93%
+[[972 252]
+ [287 931]]
+
+
+Value counts for original train_df
+label
+0    5181
+1    4883
+dtype: int64
+
+--------------------------------------------
+    TESTING ON NEW 20,000 point dataset
+--------------------------------------------
+
+When datapoints are removed to be balanced:
+
+Accuracy of Logistic Regression classifer on train set: 0.989
+Accuracy of Logistic Regression classifer on test set:  0.786
+
+Accuracy: 78.61%
+[[1753  451]
+ [ 492 1712]]
+
+
+When datapoint are duplicated to be balanced:
+Accuracy of Logistic Regression classifer on train set: 0.989
+Accuracy of Logistic Regression classifer on test set:  0.808
+
+Accuracy: 80.82%
+[[2188  507]
+ [ 511 2102]]
+
+Uncleaned + duplicate to balance (very unexpected):
+Accuracy of Logistic Regression classifer on train set: 0.989
+Accuracy of Logistic Regression classifer on test set:  0.816
+
+Accuracy: 81.61%
+[[2198  497]
+ [ 479 2134]]
+
+Accuracy of Logistic Regression classifer on train set: 0.989
+Accuracy of Logistic Regression classifer on test set:  0.82
+
+Accuracy: 82.03%
+[[2192  503]
+ [ 451 2162]]
+
+
+Unbalanced:
+Accuracy of Logistic Regression classifer on train set: 0.988
+Accuracy of Logistic Regression classifer on test set:  0.783
+
+Accuracy: 78.34%
+[[2191  496]
+ [ 556 1615]]
+
+
+
+FOR BIO CLASSIFICATION (uncleaned, balanced by duplication)
+
+Accuracy of Logistic Regression classifer on train set: 0.99
+Accuracy of Logistic Regression classifer on test set:  0.86
+
+Accuracy: 85.99%
+[[1164  202]
+ [ 190 1242]]
+
+ CLEANED, BALANCED BY DUPLICATION: (Slightly worse)
+    Accuracy of Logistic Regression classifer on train set: 0.989
+    Accuracy of Logistic Regression classifer on test set:  0.852
+
+    Accuracy: 85.24%
+    [[1111  255]
+    [ 158 1274]]
+
+UNCLEANED, BALANCED BY DELETION
+Accuracy of Logistic Regression classifer on train set: 0.991
+Accuracy of Logistic Regression classifer on test set:  0.816
+
+Accuracy: 81.58%
+[[828 138]
+ [208 704]]
+
+UNCLEANED UNBALANCED
+
+Accuracy of Logistic Regression classifer on train set: 0.99
+Accuracy of Logistic Regression classifer on test set:  0.825
+
+Accuracy: 82.51%
+[[1243  145]
+ [ 264  686]]

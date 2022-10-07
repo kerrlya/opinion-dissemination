@@ -24,6 +24,7 @@ def view_hist(df, x_axis, nbins = 300, color = "label", log_x = False, log_y = F
 bio_df = pd.read_pickle("datasets/bios.pkl")
 tweet_df = pd.read_pickle("datasets/tweets.pkl")
 
+# subtract method:
 bio_df["subtract_score"] = bio_df["prob_pair"].apply(lambda x: x[1] - x[0])
 tweet_df["subtract_score"] = tweet_df["prob_pair"].apply(lambda x: x[1] - x[0])
 

@@ -5,6 +5,8 @@ Description: Component of the Nonlinear and Complex System Research Group's 'Inf
 
 This repository includes the code for converting Twitter followership networks into csv's and visual graphs.
 
+(Here is a 350 node graph generated from the relationships among all the followers of @HMC_Alumni)
+
 <img width="500" alt="Screen Shot 2022-09-14 at 7 08 55 PM" src="https://user-images.githubusercontent.com/58631280/194263739-f29d1bbf-37c3-496e-a684-c07f009d4c87.png">
 
 I also have an experimental script in tweet_scraper.py that extracts and labels large (>5000 point) labeled datasets of tweets by inputting any number popular twitter accounts whose followers' tweets correspond to a certain keyword.

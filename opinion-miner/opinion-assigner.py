@@ -11,8 +11,7 @@ import numpy as np
 import seaborn as sns
 from sklearn import model_selection
 from sklearn.linear_model import LogisticRegression
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
 from sklearn.model_selection import train_test_split
 
 
@@ -60,10 +59,13 @@ prob_1_tweet = list(map(lambda x: x[1], pred_prob_tweet))
 bio_df["gen_label"] = pred_bio
 bio_df["prob_0"] = prob_0_bio
 bio_df["prob_1"] = prob_1_bio
+bio_df["prob_pair"] = pred_prob_bio
 
 tweet_df["gen_label"] = pred_tweet
 tweet_df["prob_0"] = prob_0_tweet
 tweet_df["prob_1"] = prob_1_tweet
+tweet_df["prob_pair"] = pred_prob_tweet
+
 
 bio_df.to_pickle("datasets/bios.pkl")
 tweet_df.to_pickle("datasets/tweets.pkl")

@@ -31,7 +31,7 @@ warnings.filterwarnings('ignore')
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier,AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
 import pickle
 import joblib
@@ -52,9 +52,9 @@ download_confusion = True # download confusion matrix or not
 
 
 if bio_or_twe == "TWE":
-    train_df = pd.read_pickle("classification-data/FULL_BOTH_TWEETS_CLASSIFICATION.pkl") # insert path to df with columns of "label" and "total" (column with clean text)
+    train_df = pd.read_pickle("classification-data/TWEETS-datasets/FULL_BOTH_TWEETS_CLASSIFICATION.pkl") # insert path to df with columns of "label" and "total" (column with clean text)
 elif bio_or_twe == "BIO":
-    train_df = pd.read_pickle("classification-data/FULL_BOTH_BIOS_CLASSIFICATION.pkl") # insert path to df with columns of "label" and "total" (column with clean text)
+    train_df = pd.read_pickle("classification-data/TWEETS-datasets/FULL_BOTH_BIOS_CLASSIFICATION.pkl") # insert path to df with columns of "label" and "total" (column with clean text)
 
 
 if column_name == "cleaned":
@@ -213,6 +213,9 @@ from sklearn.metrics import accuracy_score
 predictions = logreg.predict(x_test)
 score = accuracy_score(y_test,predictions)
 print(f"Accuracy: {round(score*100,2)}%")
+
+pred_prob = logreg.predict_proba(x_test)
+
 
 # rn accuracy is 77.98%
 

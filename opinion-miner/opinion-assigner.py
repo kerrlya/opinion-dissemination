@@ -14,6 +14,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
 from sklearn.model_selection import train_test_split
 
+#---MANUAL STUFF--- (Ignore)
 
 # import classification models (doesn't work right now)
 #sys.path.append('opinion-dissemination/data-scraping-trees/classification-models')
@@ -69,5 +70,6 @@ tweet_df["prob_pair"] = pred_prob_tweet
 
 bio_df.to_pickle("datasets/bios.pkl")
 tweet_df.to_pickle("datasets/tweets.pkl")
+
 
 

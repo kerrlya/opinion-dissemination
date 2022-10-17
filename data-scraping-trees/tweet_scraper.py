@@ -20,12 +20,23 @@ auth = tweepy.OAuthHandler(config_tweepy.CONSUMER_KEY, config_tweepy.CONSUMER_SE
 auth.set_access_token( config_tweepy.ACCESS_TOKEN,  config_tweepy.ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
+# ===========================================================
+#                      MASTER FUNCTIONS (TBD)
+# ===========================================================
+
+def create_labeled_tweet_df(user1, user2, query):
+    return 0
+
+def create_labeled_bio_df(user1, user2):
+    return 0
+
+
 def scrape_followers_of(root_username = None, rootID = None):
     """Gets list 10000 followers from root_username
             INPUTS: root_username (str) OR rootID (int or str)
             OUTPUT: followers (list of followers)    
     """
-    time.sleep(random.randomint(1,4))
+    time.sleep(random.randint(1,4))
     user_root = user(id = rootID, username =root_username)
     followers = user_root.getFollowersList() # gets up to 130,000 follwers
     return followers
@@ -309,6 +320,6 @@ twitter_query = "(#RoevWade OR unborn OR abortion OR (Roe Wade)) -is:retweet -is
 # except:
 #     pass
 
-df = pd.read_pickle("classification-data/FULL_BOTH_TWEETS.pkl")
-df2 = pd.read_pickle("classification-data/FULL_LIFE_BIOS.pkl")
+#df = pd.read_pickle("classification-data/FULL_BOTH_TWEETS.pkl")
+#df2 = pd.read_pickle("classification-data/FULL_LIFE_BIOS.pkl")
 

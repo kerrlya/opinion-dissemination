@@ -2,7 +2,7 @@
 import plotly.express as px
 import pandas as pd
 
-def view_hist(df, x_axis, nbins = 300, color = "label", log_x = False, log_y = False):
+def view_hist(df, x_axis, nbins = 300, color = "Label", log_x = False, log_y = False):
     """
     General histogram generating function data. Can choose dataframe and name of column that creates the x_axis.
     NOTE: do not set log_x to True, it doesn't work with this function.
@@ -21,13 +21,15 @@ def view_hist(df, x_axis, nbins = 300, color = "label", log_x = False, log_y = F
 
 
 
-bio_df = pd.read_pickle("datasets/bios.pkl")
-tweet_df = pd.read_pickle("datasets/tweets.pkl")
+# bio_df = pd.read_pickle("datasets/bios.pkl")
+# tweet_df = pd.read_pickle("datasets/tweets.pkl")
 
-# subtract method:
-bio_df["subtract_score"] = bio_df["prob_pair"].apply(lambda x: x[1] - x[0])
-tweet_df["subtract_score"] = tweet_df["prob_pair"].apply(lambda x: x[1] - x[0])
+# # subtract method:
+# bio_df["subtract_score"] = bio_df["prob_pair"].apply(lambda x: x[1] - x[0])
+# tweet_df["subtract_score"] = tweet_df["prob_pair"].apply(lambda x: x[1] - x[0])
 
-
-view_hist(bio_df, "subtract_score", log_y = True)
+# bio_df = bio_df.tail(int(len(bio_df)*0.2))
+# tweet_df = tweet_df.tail(int(len(tweet_df)*0.2))
+df = pd.read_pickle("test_prob.pkl")
+view_hist(df, "subtract score", log_y = True)
 

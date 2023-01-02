@@ -15,7 +15,6 @@ import time
 import random
 
 client = tweepy.Client(bearer_token = config_tweepy.BEARER_TOKEN, wait_on_rate_limit=True)
-
 auth = tweepy.OAuthHandler(config_tweepy.CONSUMER_KEY, config_tweepy.CONSUMER_SECRET) # setup api v1
 auth.set_access_token( config_tweepy.ACCESS_TOKEN,  config_tweepy.ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)

@@ -33,20 +33,23 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+
 import pickle
 import joblib
-
+import os
 #  INPUTS (This classification model generating script will be turned into function eventually)
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bio_or_twe = "TWE" # "TWE" # whether or not classification is on Twitter bios or tweets
 column_name = "text" # "text" (uncleaned)  or "cleaned# cleaned text (in list form)
-balance_method = "delete"#"duplicate" # either "duplicate" (preferable) or "delete" to correct unbalanced dataset.
+balance_method = "duplicate"#"duplicate" # either "duplicate" (preferable) or "delete" to correct unbalanced dataset.
                              # Duplicate creates copies of under-represented datapoints for model, delete simply deletes excess datapoints of the majority
-filename = "bio_classifier" # file name of pickle classifier
+filename = "TWE_balancedbyDUP_stopwords" #bio_classifier" # file name of pickle classifier
 minority = 1 # if you're balancing by duplicating, you must enter the minority label
 test_ratio = 0.25 # percentage of datapoints that are for testing. The rest will be for test
 export = False # to export classifier model with filename or not
-download_confusion = True # download confusion matrix or not
+export_vectorizer = False # to export count_vectorizer
+download_confusion = False # download confusion matrix or not
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -108,12 +111,14 @@ train_df.drop("label", axis = 1, inplace = True) # axis = 1 --> columnwise drop,
 
 # make tfidf transformer (transforms word count matrix to tf-idf representation (term frequency, inverse document frequency), rare words in only one type of documents are more important to classification for tfidf)
 transformer = TfidfTransformer(smooth_idf=False)
-count_vectorizer = CountVectorizer(ngram_range=(1,2)) #(ngrams being 1 to 2 means that count vectorizer considers only bigrams and unigrams)
+count_vectorizer = CountVectorizer(stop_words = 'english', ngram_range=(1,2), min_df = 100, analyzer='word', max_features=2000) #(ngrams being 1 to 2 means that count vectorizer considers only bigrams and unigrams)
+#count_vectorizer = CountVectorizer(ngram_range=(1,2)) #(ngrams being 1 to 2 means that count vectorizer considers only bigrams and unigrams)
 
 # fit train data with pre-lemmatized and tokenized data
 #train_counts = count_vectorizer.fit_transform(train_df["total"].values)
 
 # do it with tokenized_join instead(?)
+
 train_counts = count_vectorizer.fit_transform(train_df[column_name].values)
 
 # fit ngrams count to tfidf transformaers
@@ -121,8 +126,6 @@ train_tfidf = transformer.fit_transform(train_counts)
 
 # split df into train and test data. Use automatic distributation of 75% train and 25% test. 
 # documentation: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
-
-from sklearn.model_selection import train_test_split
 
 x_train, x_test, y_train, y_test = train_test_split(train_tfidf, targets, random_state = 0, test_size = test_ratio) # x = input, y = label
 
@@ -171,6 +174,7 @@ def make_RandomForestClassifier(x_train, x_test, y_train, y_test):
 
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
+
 def make_NaiveBayesClassifier(x_train, x_test, y_train, y_test):
     """ 
     This one has done 2nd to best. Apparently NB is good for certain classification tasks where nodes aren't dependent on eachother (?)
@@ -236,4 +240,7 @@ plt.show()
 print(plot_name)
 if download_confusion:
     fig.savefig(f"{plot_file_path}/{plot_name}.png", dpi = 100)
+
+if export_vectorizer:
+    pickle.dump(count_vectorizer,open(f"{filename}_vec.pkl", 'wb'))
 

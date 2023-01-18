@@ -43,6 +43,30 @@ This folder contains scripts, datasets, plots, and graphs relating to data scrap
      SUB-FOLDER DESCRIPTIONS
 ----------------------------------
 
+.
+├── data-scraping-trees     # contains scripts, datasets, plots, and graphs relating to data scraping from Twitter and data-based graph generation and opinion distributions
+│   ├── better_perf_models          # contains all bio and tweet classification models with varying number of features
+│   ├── classification-data         # contains the datasets used to train classification models
+│   │   ├── benchmarks          # Load and stress tests
+│   │   ├── benchmarks          # Load and stress tests
+│   │   ├── benchmarks          # Load and stress tests
+│   │   └── unit 
+│   ├── benchmarks          # Load and stress tests
+│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+│   ├── benchmarks          # Load and stress tests
+│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+│   ├── benchmarks          # Load and stress tests
+│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+│   ├── benchmarks          # Load and stress tests
+│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+│   ├── benchmarks          # Load and stress tests
+│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+│   └── unit    
+├── .gitignore              # (not working yet)
+├── LICENSE                 # eventually, this should be changed
+└── README.md
+
 __pycache__ 
         DESCRIPTION: Automatically generated caches for all tweepy scraping tools/scripts in data-scraping-trees
 better_perf_models
@@ -77,7 +101,7 @@ confusion-matrices
             DESCRIPTION: contains text confusion matrices for confusion matrices and accuracy rates based on  
 
 EDA-data-plots
-        DESCRIPTION: contains datasets and plots for/of exploratory data anlaysis for tweets and bios for the 20000 point and 10000 point datasets
+|-------DESCRIPTION: contains datasets and plots for/of exploratory data anlaysis for tweets and bios for the 20000 point and 10000 point datasets
 external-datasets
         DESCRIPTION: contains outside datasets from the internet
 graph-datasets

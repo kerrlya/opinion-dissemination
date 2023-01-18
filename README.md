@@ -32,7 +32,7 @@ Detailed documentation can be found with the following links.
 
 [Summer Journal Link](https://drive.google.com/file/d/118xRUz1HUETt3eHmt-tr7rNlCHFY5uvD/view?usp=sharing) (Too much information) 
 
-[Fall Research Journal Link]()
+[Fall Research Journal Link](https://drive.google.com/file/d/1j6r1Y0uF248shx9AlJdZ-Zp-00QFNwxG/view?usp=sharing)
 
 ## Repository Guide
 This is a directory guide to the data-scraping-trees folder.

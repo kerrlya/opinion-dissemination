@@ -39,9 +39,8 @@ This is a directory guide to the data-scraping-trees folder.
 
 This folder contains scripts, datasets, plots, and graphs relating to data scraping from Twitter and data-based graph generation.
 
-----------------------------------
-     SUB-FOLDER DESCRIPTIONS
-----------------------------------
+##SUB-FOLDER DESCRIPTIONS
+______________________________________
 (look in code mode for this)
 __pycache__ 
         DESCRIPTION: Automatically generated caches for all tweepy scraping tools/scripts in data-scraping-trees
@@ -88,3 +87,5 @@ graphs
         DESCRIPTION: pictures and gexf files of twitter cascade and followership networks
 TRASH
         DESCRIPTION: discontinued scripts and datasets (many of these lack documentation)
+        
+ __________________________
